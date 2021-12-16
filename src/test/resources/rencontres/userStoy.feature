@@ -1,4 +1,4 @@
-#Author: Ali Benyoucef
+#Author: Ali Benyoucef, Chaib Oussama
 
 @tag
 Feature: Enregistrer toutes les rencontres lors d une journée de la ligue 
