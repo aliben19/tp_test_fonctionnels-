@@ -1,5 +1,7 @@
 package rencontres;
 
+import java.util.ArrayList;
+
 import rencontres.Club;
 
 public class Rencontre {
@@ -7,15 +9,35 @@ public class Rencontre {
 	private int scoreClub1, scoreClub2 ;
 	private boolean isValide=true ;
 	private String resultat ;
+	private Club clubGagnant;
+	private ArrayList <Joueur> listJoueur;
 	
 	public Rencontre(Club club1, Club club2,int sc1 , int sc2){
 		this.club1=club1;
 		this.club2=club2;
 		this.scoreClub1=sc1;
 		this.scoreClub2=sc2;
-		if(this.scoreClub1>this.scoreClub2 ) {this.resultat="victoire club 1";}
-		else{if(this.scoreClub1<this.scoreClub2 ) {this.resultat="victoire club 2";}
-		else{if(this.scoreClub1==this.scoreClub2 ) {this.resultat="Match null ";}}}
+		this.club1.set_mj(this.club1.get_mj()+1);
+		this.club2.set_mj(this.club2.get_mj()+1);
+		if(this.scoreClub1>this.scoreClub2 ) {
+			this.resultat="victoire club 1";
+			this.clubGagnant = club1;
+		}
+		else{if(this.scoreClub1<this.scoreClub2 ) {
+			this.resultat="victoire club 2";
+			this.clubGagnant = club2;
+			}
+		else{if(this.scoreClub1==this.scoreClub2 ) {
+			this.resultat="Match null ";
+			}}}
+		if(clubGagnant != null) {
+			listJoueur = clubGagnant.getListJoueur();
+			clubGagnant.victoire();
+			for (int i = 0; i < listJoueur.size(); i++) {
+				Joueur joueur = listJoueur.get(i);
+				joueur.sportifJoueUnjeux(this);
+			}
+		}
 	}
 	
 	public void Valider() {
@@ -26,6 +48,7 @@ public class Rencontre {
 	
 	public Club getClub1() { return this.club1 ;}
 	public Club getClub2() { return this.club2 ;}
+	public Club getGagnant() { return this.clubGagnant ;}
 	
 	public int getscoreClub1() {return this.scoreClub1;}
 	public int getscoreClub2() {return this.scoreClub2;}
@@ -33,7 +56,7 @@ public class Rencontre {
     public boolean getIsValide() {return this.isValide;} 
 	
 	public String getErrorMessage(){
-		return !this.isValide ? "Score Négatif" : "" ; 
+		return !this.isValide ? "Score NÃ©gatif" : "" ; 
 	}
 	
 	public void setscoreClub1(int s1) {this.scoreClub1=s1;}
