@@ -10,9 +10,9 @@ public class Rencontre {
 	private boolean isValide=true ;
 	private String resultat ;
 	private Club clubGagnant;
-	private ArrayList <Joueur> listJoueur;
 	
 	public Rencontre(Club club1, Club club2,int sc1 , int sc2){
+		ArrayList <Joueur> listJoueur;
 		this.club1=club1;
 		this.club2=club2;
 		this.scoreClub1=sc1;
