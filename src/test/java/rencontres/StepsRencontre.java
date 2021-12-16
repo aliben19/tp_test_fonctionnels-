@@ -23,8 +23,18 @@ public class StepsRencontre {
 	
 	@Then("le resultat est affiche")
 	public void le_resultat_est_affiche(){
+	Club gagnant;	
 	Assert.assertTrue(this.r.getResultat()=="victoire club 1" ||this.r.getResultat()== "victoire club 2" ||this.r.getResultat()=="match null")	;
+	gagnant = r.getGagnant();	
+	if (gagnant != null)
+	{
+		for (int i=0; i<19;i++) {
+	    	Joueur joueur = gagnant.getListJoueur().get(i);
+	    	assertEquals(1000,joueur.getNombrePoint());
+	    }
 	}
+	}
+	
 	@Given("Une rencontre avec un score negatif")
 	public void Une_rencontre_avec_un_score_negatif() {
 		Club c1= new Club("c1");
