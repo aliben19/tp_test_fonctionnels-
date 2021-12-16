@@ -18,7 +18,7 @@ public class testRencontre {
 		 int mj1 = club1.get_mj();
 		 int mj2 = club2.get_mj();
 		 int point2 = club2.get_nbpoints();
-		 Rencontre r =new Rencontre(club1,club2,sc1,sc2);// CrÃ©er une rencontre
+		 Rencontre r =new Rencontre(club1,club2,sc1,sc2);// Créer une rencontre
 		 assertEquals(1,r.getscoreClub1());
 		 assertEquals(2,r.getscoreClub2());
 		 assertEquals(club1,r.getClub1());
@@ -42,7 +42,7 @@ public class testRencontre {
 		 Club club2=new Club("club2") ;
 		 int sc1=1;
 		 int sc2=2;
-		 Rencontre r=new Rencontre(club1,club2,sc1,sc2);// CrÃ©er une rencontre
+		 Rencontre r=new Rencontre(club1,club2,sc1,sc2);// Créer une rencontre
 		    assertEquals(1,r.getscoreClub1());
 			assertEquals(2,r.getscoreClub2());
 			assertEquals(club1,r.getClub1());
@@ -56,19 +56,19 @@ public class testRencontre {
 		 Club club2=new Club("club2") ;
 		 int sc1=1;
 		 int sc2=2;
-		 Rencontre r=new Rencontre(club1,club2,sc1,sc2);// CrÃ©er une rencontre
-		 r.Valider();// la rencontre sera validÃ© tant que les 2 scores sont positif 
+		 Rencontre r=new Rencontre(club1,club2,sc1,sc2);// Créer une rencontre
+		 r.Valider();// la rencontre sera validé tant que les 2 scores sont positif 
 		Assert.assertTrue(r.getIsValide());
 		 }
 	@Test
 	public final void testErrorMessage() {
 		 Club club1=new Club("club1");
 		 Club club2=new Club("club2") ;
-		 int sc1=-1; // score nÃ©gatif pour tester si le message d'erreur sera retournÃ© 
+		 int sc1=-1; // score négatif pour tester si le message d'erreur sera retourné 
 		 int sc2=2;
-		 Rencontre r=new Rencontre(club1,club2,sc1,sc2);// CrÃ©er une rencontre
+		 Rencontre r=new Rencontre(club1,club2,sc1,sc2);// Créer une rencontre
 		 r.Valider();
-		 assertEquals("Score NÃ©gatif",r.getErrorMessage());
+		 assertEquals("Score Négatif",r.getErrorMessage());
 	}
 
 

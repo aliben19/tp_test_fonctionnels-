@@ -3,12 +3,12 @@ package rencontres;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Club
+public class Club implements IClub
 {
    
 	private String name ;
     private int nb_points;
-    private int mj; // Match JouÃ©es 
+    private int mj; // Match Jouées 
     private int classement ;
     private ArrayList <Stade> stades ;
     private ArrayList <Joueur> listJoueur;
@@ -30,7 +30,7 @@ public class Club
         }
     }
     public void addStade(Stade s) {
-    	this.stades.add(s);// ajouter le stade Ã  la liste des satdes du club
+    	this.stades.add(s);// ajouter le stade à la liste des satdes du club
     	s.setOwner(this);// affecter le stade au club 
     	}
     

@@ -56,7 +56,7 @@ public class Rencontre {
     public boolean getIsValide() {return this.isValide;} 
 	
 	public String getErrorMessage(){
-		return !this.isValide ? "Score NÃ©gatif" : "" ; 
+		return !this.isValide ? "Score Négatif" : "" ; 
 	}
 	
 	public void setscoreClub1(int s1) {this.scoreClub1=s1;}

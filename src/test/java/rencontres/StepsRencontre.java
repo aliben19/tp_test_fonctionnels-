@@ -47,8 +47,8 @@ public class StepsRencontre {
 		this.r.Valider();
 	}
 	@Then("Error le systeme n affiche pas Le resultat")
-	public void Error_le_systÃ¨me_n_affiche_pas_Le_rÃ©sultat(){
-	Assert.assertTrue(this.r.getErrorMessage()=="Score NÃ©gatif");
+	public void Error_le_système_n_affiche_pas_Le_résultat(){
+	Assert.assertTrue(this.r.getErrorMessage()=="Score Négatif");
 	}
 	
 	

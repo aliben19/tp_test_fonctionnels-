@@ -1,7 +1,7 @@
 #Author: Ali Benyoucef, Chaib Oussama
 
 @tag
-Feature: Enregistrer toutes les rencontres lors d une journ√©e de la ligue 
+Feature: Enregistrer toutes les rencontres lors d une journÈe de la ligue 
 
   
 
@@ -20,7 +20,6 @@ Feature: Enregistrer toutes les rencontres lors d une journ√©e de la ligue
     Given Une rencontre avec un score negatif 
     When l employe valide la rencontreS  
     Then Error le systeme n affiche pas Le resultat 
-
     Examples:  
      |club 1 | score |score | club2 | MessageError
-     |  FCB  |  2    |  -1  |   PSG | le score de club2 est n√©gatif
+     |  FCB  |  2    |  -1  |   PSG | le score de club2 est nÈgatif
