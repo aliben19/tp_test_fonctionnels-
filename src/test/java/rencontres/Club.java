@@ -1,16 +1,17 @@
 package rencontres;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Club
 {
    
 	private String name ;
     private int nb_points;
-    private int mj; // Match Jouées 
+    private int mj; // Match JouÃ©es 
     private int classement ;
     private ArrayList <Stade> stades ;
-  
+    private ArrayList <Joueur> listJoueur;
    
     
     /**
@@ -21,17 +22,21 @@ public class Club
     	this.name=name ;
     	this.nb_points = 0;
         this.mj = 0;
-        this.stades=new ArrayList<Stade>();
+        this.stades = new ArrayList<Stade>();
+        this.listJoueur = new ArrayList<Joueur>();
+        for (int i=0; i<19;i++) {
+        	Joueur joueur = new Joueur();
+        	this.listJoueur.add(joueur);
+        }
     }
     public void addStade(Stade s) {
-    	this.stades.add(s);// ajouter le stade à la liste des satdes du club
+    	this.stades.add(s);// ajouter le stade Ã  la liste des satdes du club
     	s.setOwner(this);// affecter le stade au club 
     	}
     
     public void victoire()
     {
         this.nb_points += 3;
-        this.mj += 1;
     }
     public 	String  get_name()
     {
@@ -74,6 +79,10 @@ public class Club
     public void set_stades(ArrayList<Stade> list)
     {
         this.stades= list;
+    }
+    public ArrayList<Joueur> getListJoueur() {
+    	return (this.listJoueur);
+    			//this.listJeuxJouer;
     }
   
 }
